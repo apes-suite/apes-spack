@@ -8,4 +8,5 @@ git clone https://github.com/apes-suite/apes-spack.git
 spack repo add apes-spack
 ```
 
-Then you can install musubi, seeder and ateles accordingly via `spack install`.
+Then you can install musubi, seeder, ateles, gleaner and apes-shepherd
+accordingly via `spack install`.
