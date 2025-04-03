@@ -18,6 +18,7 @@ class Ateles(WafPackage):
     maintainers = ["haraldkl"]
 
     version("develop", preferred=True, get_full_repo=True, submodules=True)
+
     depends_on("mpi")
 
 

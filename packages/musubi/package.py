@@ -18,17 +18,10 @@ class Musubi(WafPackage):
     maintainers = ["haraldkl"]
 
     version("develop", preferred=True, get_full_repo=True, submodules=True)
-    version("osdn", hg="https://hg.osdn.net/view/apes/musubi")
-    version(
-        "2.0.1",
-        revision="77873c5b4c1eca128cde7c3f34fcf7144aeb2ba7",
-        hg="https://hg.osdn.net/view/apes/musubi",
-    )
 
     variant("openmp", default=False, description="Compile with OpenMP support")
 
     depends_on("mpi")
-    depends_on("mercurial", type=("build",), when=("@2.0.1,osdn"))
 
 
 class WafBuilder(spack.build_systems.waf.WafBuilder):
@@ -38,9 +31,7 @@ class WafBuilder(spack.build_systems.waf.WafBuilder):
         import os
 
         jobs = inspect.getmodule(self.pkg).make_jobs
-        wafexec = "waf"
-        if self.spec.satisfies("@2.0.2:"):
-            wafexec = os.path.join("bin", "waf")
+        wafexec = os.path.join("bin", "waf")
 
         with working_dir(self.build_directory):
             self.python(wafexec, "-j{0}".format(jobs), *args, **kwargs)
