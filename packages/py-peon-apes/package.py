@@ -17,7 +17,7 @@ class PyPeonApes(PythonPackage):
 
     maintainers("haraldkl")
 
-    version("2025.04.03", sha256="e539b8ca930884c98dfafb786ba34a56a3760bea2e68e9df963925b0e6773064")
+    version("2025.04.04", sha256="da5f0f36caf84335dc30a60439e3dbe5edfb47077d3ce0c3def24d915dacabfa")
 
     extends("python")
 
