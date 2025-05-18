@@ -17,7 +17,8 @@ class Seeder(WafPackage):
     # notify when the package is updated.
     maintainers = ["haraldkl"]
 
-    version("develop", preferred=True, get_full_repo=True, submodules=True)
+    version("develop", get_full_repo=True, submodules=True)
+    version("1.6", tag="v1.6", preferred=True, submodules=True)
     depends_on("mpi")
 
 
